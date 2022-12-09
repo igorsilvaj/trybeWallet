@@ -1,17 +1,37 @@
-import { WALLET } from '../actions/index';
+import { REQUEST_API, GET_DATA, REQUEST_FAILED } from '../actions/index';
 
 const INITIAL_STATE = {
-  temp: '',
+  currencies: [],
+  isFetching: false,
+  errorMessage: '',
 };
 
-const user = (state = INITIAL_STATE, action) => {
+const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case WALLET:
-    return { ...state, temp: { ...action.wallet1 } };
+  case REQUEST_API:
+    return {
+      ...state,
+      isFetching: true,
+      errorMessage: '',
+    };
+  case GET_DATA:
+    return {
+      ...state,
+      isFetching: false,
+      currencies: Object.keys(action.data).filter((e) => e !== 'USDT'),
+      errorMessage: '',
+    };
+    // Object.values(action.data).filter((e) => e.codein !== 'BRLT'),
+  case REQUEST_FAILED:
+    return {
+      ...state,
+      isFetching: false,
+      errorMessage: action.payload,
+    };
   default:
     return state;
   }
 };
 
-export default user;
+export default wallet;
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas

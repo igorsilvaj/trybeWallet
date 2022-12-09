@@ -3,9 +3,10 @@
   border-radius: 10px;
   box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   height: 385px;
-  justify-content: space-around;
+  position: absolute;
+  top: 0;
   width: 1037px;
 }
 
@@ -16,6 +17,7 @@
   flex-flow: row wrap;
   height: 100px;
   justify-content: space-around;
+  margin: 25px 0;
   width: 100%;
 }
 
@@ -87,6 +89,7 @@
   display: flex;
   flex-flow: row wrap;
   height: 135px;
+  margin-bottom: 30px;
   width: 100%;
 }
 
@@ -159,12 +162,34 @@
   width: 91px;
 }
 
+.btnAddExpenseContainer {
+  display: flex;
+  flex-flow: row wrap;
+  height: 38px;
+  width: 100%;
+}
+
 .btnAddExpense {
   background-color: #2fc18c;
   border: 1px solid #2fc18c;
   border-radius: 5px;
   color: white;
+  cursor: pointer;
   font-weight: 700;
   height: 40px;
+  margin: auto;
   width: 330px;
+}
+
+.tableContainer {
+  background-color: #003be5;
+  border-radius: 10px;
+  bottom: 0;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  margin: auto;
+  min-height: 464px;
+  position: absolute;
+  transform: translate(-60px, 230px);
+  width: 1155px;
+  z-index: -1;
 }

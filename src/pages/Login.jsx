@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { login } from '../redux/actions';
+import { fetchAPI, login } from '../redux/actions';
 
 import Button from '../components/Button';
 import InputText from '../components/InputText';
@@ -18,14 +18,6 @@ class Login extends React.Component {
     return re.test(email);
   };
 
-  // checkPasswordLen = (passwordInput) => {
-  //   const minimumLength = 6;
-  //   console.log(passwordInput.length >= minimumLength);
-  //   if (passwordInput.length >= minimumLength) {
-  //     return this.setState({ validPassword: true });
-  //   }
-  //   return this.setState({ validPassword: false });
-  // };
   checkPasswordLen = (pass) => {
     const minLen = 6;
     if (pass.length >= minLen) {
@@ -57,6 +49,7 @@ class Login extends React.Component {
     const { email } = this.state;
     dispatch(login(email));
     history.push('/carteira');
+    dispatch(fetchAPI());
   };
 
   render() {

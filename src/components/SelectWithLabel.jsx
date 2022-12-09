@@ -20,7 +20,8 @@ export default class selectTextWithLabel extends Component {
             type={ type }
             value={ value }
           >
-            {options.map((e, index) => (<option key={ `${e}-${index}` }>{e}</option>))}
+            {options.map((e, index) => (
+              <option key={ `${e}-${index}` } value={ e }>{e}</option>))}
           </select>
         </label>
       </div>
