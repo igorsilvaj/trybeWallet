@@ -1,9 +1,11 @@
-import { REQUEST_API, GET_DATA, REQUEST_FAILED } from '../actions/index';
+import { REQUEST_API, GET_DATA, REQUEST_FAILED,
+  SAVE_EXPENSE } from '../actions/index';
 
 const INITIAL_STATE = {
   currencies: [],
   isFetching: false,
   errorMessage: '',
+  expenses: [],
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -21,7 +23,17 @@ const wallet = (state = INITIAL_STATE, action) => {
       currencies: Object.keys(action.data).filter((e) => e !== 'USDT'),
       errorMessage: '',
     };
-    // Object.values(action.data).filter((e) => e.codein !== 'BRLT'),
+  case SAVE_EXPENSE:
+    return {
+      ...state,
+      isFetching: false,
+      expenses: [...state.expenses,
+        { id: state.expenses.length,
+          ...action.data,
+          exchangeRates: action.quote,
+          // total: +action.data.value * +action.quote,
+        }],
+    };
   case REQUEST_FAILED:
     return {
       ...state,

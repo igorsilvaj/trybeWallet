@@ -166,6 +166,7 @@
   display: flex;
   flex-flow: row wrap;
   height: 38px;
+  margin-top: 20px;
   width: 100%;
 }
 

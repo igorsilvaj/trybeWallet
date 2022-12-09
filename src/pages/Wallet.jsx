@@ -15,9 +15,6 @@ class Wallet extends React.Component {
       <div className="walletContainer">
         <Header />
         <WalletForm />
-        <div className="btnAddExpenseContainer">
-          <button className="btnAddExpense" type="submit">Adicionar despesa</button>
-        </div>
         <Table />
       </div>
     );
