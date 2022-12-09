@@ -1,0 +1,52 @@
+.loginContainer {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  display: flex;
+  flex-flow: column wrap;
+  height: 356px;
+  justify-content: center;
+  width: 525px;
+}
+
+.logoTrybeWallet {
+  background-image: url('../imgs/logoTrybeWallet.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 57px;
+  justify-content: center;
+  margin-bottom: 30px;
+  mix-blend-mode: normal;
+  width: 269px;
+}
+
+.inputEmail , .inputPassword {
+  background-color: transparent;
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  color: #003be5;
+  margin-top: 10px;
+  padding: 11.3px;
+  width: 330px;
+}
+
+.inputEmail::placeholder , .inputPassword::placeholder {
+  color: #003be5;
+}
+
+.inputEmail:focus , .inputPassword:focus {
+  box-shadow: 0 0 10px #003be5;
+  outline: none;
+}
+
+.btnLogin {
+  background-color: #003be5;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  height: 40px;
+  margin-top: 10px;
+  width: 330px;
+}
