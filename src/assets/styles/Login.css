@@ -7,7 +7,12 @@
   flex-flow: column wrap;
   height: 356px;
   justify-content: center;
+  margin: auto;
   width: 525px;
+}
+
+.formLogin {
+  margin: auto;
 }
 
 .logoTrybeWallet {

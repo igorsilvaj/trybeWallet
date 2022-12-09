@@ -37,9 +37,6 @@ class Login extends React.Component {
   checkValidForm = () => {
     const { email, validPassword } = this.state;
     const validMail = this.checkValidMail(email);
-    // console.log('mail:', validMail);
-    // console.log('pass:', validPassword);
-    // console.log('form:', validMail && validPassword);
     if (validMail && validPassword) {
       return this.setState({ isBtnDisabled: false });
     }
@@ -65,7 +62,7 @@ class Login extends React.Component {
   render() {
     const { isBtnDisabled, email } = this.state;
     return (
-      <form>
+      <form className="formLogin">
         <div className="loginContainer">
           <div className="logoTrybeWallet" />
           <InputText
