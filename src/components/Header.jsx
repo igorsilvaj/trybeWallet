@@ -13,12 +13,17 @@ class Header extends Component {
           <p className="txtExpense">
             Total de despesas:
             <span className="txtExpenseTotal" data-testid="total-field">0</span>
-            <span data-testid="header-currency-field">BRL</span>
+            <span
+              className="txtExpenseCurrency"
+              data-testid="header-currency-field"
+            >
+              BRL
+            </span>
           </p>
         </div>
         <div className="mailContainer">
           <div className="imgUserProfile" />
-          <span data-testid="email-field">{email}</span>
+          <span className="txtEmail" data-testid="email-field">{email}</span>
         </div>
       </div>
     );
