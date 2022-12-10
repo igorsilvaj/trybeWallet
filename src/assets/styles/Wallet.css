@@ -194,3 +194,15 @@
   width: 1155px;
   z-index: -1;
 }
+
+.expenseTableContainer {
+  margin-top: 285px;
+}
+
+.expenseTable {
+  margin: auto;
+}
+
+.expenseTableHeader {
+  color: white;
+}
