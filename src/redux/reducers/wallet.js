@@ -1,5 +1,6 @@
 import { REQUEST_API, GET_DATA, REQUEST_FAILED,
-  SAVE_EXPENSE } from '../actions/index';
+  SAVE_EXPENSE,
+  DELETE_EXPENSE } from '../actions/index';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -31,8 +32,12 @@ const wallet = (state = INITIAL_STATE, action) => {
         { id: state.expenses.length,
           ...action.data,
           exchangeRates: action.quote,
-          // total: +action.data.value * +action.quote,
         }],
+    };
+  case DELETE_EXPENSE:
+    return {
+      ...state,
+      expenses: [...state.expenses.filter((e) => e.id !== action.id)],
     };
   case REQUEST_FAILED:
     return {
@@ -46,4 +51,3 @@ const wallet = (state = INITIAL_STATE, action) => {
 };
 
 export default wallet;
-// Esse reducer será responsável por tratar o todas as informações relacionadas as despesas

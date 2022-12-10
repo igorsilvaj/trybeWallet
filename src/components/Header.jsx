@@ -9,7 +9,7 @@ class Header extends Component {
       const { currency } = curr;
       return acc + (curr.value * curr.exchangeRates[currency].ask);
     }, 0);
-    return Math.round(sum * 100) / 100;
+    return (Math.round(sum * 100) / 100).toFixed(2);
   };
 
   render() {

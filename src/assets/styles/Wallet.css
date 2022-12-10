@@ -206,3 +206,25 @@
 .expenseTableHeader {
   color: white;
 }
+
+.btnEditExpense {
+  background-color: transparent;
+  background-image: url('../imgs/Editar.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+}
+
+.btnDeleteExpense {
+  background-color: transparent;
+  background-image: url('../imgs/del.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+}

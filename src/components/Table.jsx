@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Button from './Button';
+import { deleteExpense } from '../redux/actions';
 
 class Table extends Component {
   render() {
-    const { expenses } = this.props;
+    const { expenses, dispatch } = this.props;
     console.log(expenses);
     return (
       <div className="expenseTableContainer">
@@ -29,7 +31,7 @@ class Table extends Component {
               const total = e.value * e.exchangeRates[currency].ask;
               const coinConverted = e.exchangeRates[currency].name;
               return (
-                <tr key={ index }>
+                <tr key={ `${currency}-${index}` }>
                   <td>{e.description}</td>
                   <td>{e.tag}</td>
                   <td>{e.method}</td>
@@ -37,8 +39,17 @@ class Table extends Component {
                   <td>{coinConverted}</td>
                   <td>{Math.round(camb * 100) / 100}</td>
                   <td>{Math.round(total * 100) / 100}</td>
-                  <td>{coinConverted.split('/')[1]}</td>
-                  <td>WIP</td>
+                  <td>Real</td>
+                  {/* <td>{coinConverted.split('/')[1]}</td> */}
+                  <td>
+                    <Button className="btnEditExpense" />
+                    <Button
+                      className="btnDeleteExpense"
+                      datatestid="delete-btn"
+                      disabled={ false }
+                      onClick={ () => dispatch(deleteExpense(e.id)) }
+                    />
+                  </td>
                 </tr>
               );
             })}
@@ -58,6 +69,7 @@ Table.defaultProps = {
 };
 
 Table.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   expenses: PropTypes.arrayOf(PropTypes.shape()),
 };
 

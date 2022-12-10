@@ -4,14 +4,14 @@ export const GET_DATA = 'GET_DATA';
 export const UPDATE_DATA = 'UPDATE_DATA';
 export const REQUEST_FAILED = 'REQUEST_FAILED';
 export const SAVE_EXPENSE = 'SAVE_EXPENSE';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const login = (email) => ({ type: USER, email });
-
 export const requestAPI = () => ({ type: REQUEST_API });
 export const getData = (data) => ({ type: GET_DATA, data });
 export const requestFailed = (error) => ({ type: REQUEST_FAILED, error });
-
 export const saveExpense = (data, quote) => ({ type: SAVE_EXPENSE, data, quote });
+export const deleteExpense = (id) => ({ type: DELETE_EXPENSE, id });
 
 export function fetchAPI() {
   return (dispatch) => {
