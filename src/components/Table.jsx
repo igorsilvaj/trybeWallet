@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Table extends Component {
   render() {
     return (
-      <div className="tableContainer" />
+      <div className="expenseTableContainer">
+        <table className="expenseTable" />
+      </div>
     );
   }
 }
 
-export default Table;
+const mapStateToProps = (state) => ({
+  isFetching: state.wallet.isFetching,
+});
+
+export default connect(mapStateToProps)(Table);
