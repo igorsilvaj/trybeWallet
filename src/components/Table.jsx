@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from './Button';
-import { deleteExpense } from '../redux/actions';
+import { deleteExpense, initEditExpense } from '../redux/actions';
 
 class Table extends Component {
   render() {
     const { expenses, dispatch } = this.props;
-    console.log(expenses);
     return (
       <div className="expenseTableContainer">
         <table className="expenseTable">
@@ -39,10 +38,14 @@ class Table extends Component {
                   <td>{coinConverted}</td>
                   <td>{Math.round(camb * 100) / 100}</td>
                   <td>{Math.round(total * 100) / 100}</td>
-                  <td>Real</td>
-                  {/* <td>{coinConverted.split('/')[1]}</td> */}
+                  <td>{coinConverted.split('/')[1]}</td>
                   <td>
-                    <Button className="btnEditExpense" />
+                    <Button
+                      className="btnEditExpense"
+                      datatestid="edit-btn"
+                      disabled={ false }
+                      onClick={ () => dispatch(initEditExpense(e.id)) }
+                    />
                     <Button
                       className="btnDeleteExpense"
                       datatestid="delete-btn"
