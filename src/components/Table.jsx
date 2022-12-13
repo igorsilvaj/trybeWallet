@@ -22,15 +22,16 @@ class Table extends Component {
               <th>Moeda de conversão</th>
               <th>Editar/Excluir</th>
             </tr>
+            <tr className="gap" />
           </thead>
-          <tbody>
+          <tbody className="expenseTableContent">
             {expenses.map((e, index) => {
               const { currency } = e;
               const camb = e.exchangeRates[currency].ask;
               const total = e.value * e.exchangeRates[currency].ask;
               const coinConverted = e.exchangeRates[currency].name;
               return (
-                <tr key={ `${currency}-${index}` }>
+                <tr key={ `${currency}-${index}` } className="greenBorderTop">
                   <td>{e.description}</td>
                   <td>{e.tag}</td>
                   <td>{e.method}</td>
@@ -38,7 +39,8 @@ class Table extends Component {
                   <td>{coinConverted}</td>
                   <td>{Math.round(camb * 100) / 100}</td>
                   <td>{Math.round(total * 100) / 100}</td>
-                  <td>{coinConverted.split('/')[1]}</td>
+                  <td>Real</td>
+                  {/* <td>{coinConverted.split('/')[1]}</td> */}
                   <td>
                     <Button
                       className="btnEditExpense"

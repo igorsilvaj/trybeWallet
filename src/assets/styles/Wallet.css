@@ -187,24 +187,59 @@
   border-radius: 10px;
   bottom: 0;
   box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  left: -60px;
   margin: auto;
+  max-height: auto;
   min-height: 464px;
   position: absolute;
-  transform: translate(-60px, 230px);
+  top: 380px;
   width: 1155px;
   z-index: -1;
 }
 
 .expenseTableContainer {
-  margin-top: 285px;
+  height: 170px;
+  margin: auto;
+  margin-top: 275px;
+  overflow: auto;
+  width: 1037px;
 }
 
 .expenseTable {
+  border-collapse: collapse;
+  font-size: 12px;
   margin: auto;
+  text-align: center;
+  width: 100%;
 }
 
 .expenseTableHeader {
   color: white;
+}
+
+.expenseTableHeader th:not( :first-child ) {
+  border-left: 1px solid white;
+  height: 23px;
+  padding: 0 5px;
+  width: 110px;
+}
+
+.expenseTableHeader th:nth-child( 5 ) {
+  width: 140px;
+}
+
+.gap {
+  border-bottom: 1px solid white;
+  height: 10px;
+}
+
+.expenseTableContent {
+  color: #2fc18c;
+}
+
+.greenBorderTop {
+  border-bottom: 1px solid #2fc18c;
+  height: 41px;
 }
 
 .btnEditExpense {
@@ -215,6 +250,7 @@
   border: none;
   cursor: pointer;
   height: 15px;
+  margin-right: 15px;
   width: 15px;
 }
 

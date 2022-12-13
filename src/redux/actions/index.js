@@ -16,28 +16,31 @@ export const requestFailed = (error) => ({ type: REQUEST_FAILED, error });
 export const saveExpense = (data, quote) => ({ type: SAVE_EXPENSE, data, quote });
 export const deleteExpense = (id) => ({ type: DELETE_EXPENSE, id });
 export const initEditExpense = (id) => ({ type: INIT_EDIT_EXPENSE, id });
-export const editExpense = (id, data) => {
-  console.log(data);
-  return { type: EDIT_EXPENSE, id, data };
-};
+export const editExpense = (id, data) => ({ type: EDIT_EXPENSE, id, data });
 export const saveForm = (data) => ({ type: SAVE_FORM, data });
 
 export function fetchAPI() {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(requestAPI());
-    fetch('https://economia.awesomeapi.com.br/json/all')
-      .then((response) => response.json())
-      .then((data) => dispatch(getData(data)))
-      .catch((error) => dispatch(requestFailed(error)));
+    try {
+      const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+      const data = await response.json();
+      dispatch(getData(data));
+    } catch (error) {
+      dispatch(requestFailed(error));
+    }
   };
 }
 
 export function handleUserAddExpense(data) {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(requestAPI());
-    fetch('https://economia.awesomeapi.com.br/json/all')
-      .then((response) => response.json())
-      .then((quote) => dispatch(saveExpense(data, quote)))
-      .catch((error) => dispatch(requestFailed(error)));
+    try {
+      const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+      const quote = await response.json();
+      dispatch(saveExpense(data, quote));
+    } catch (error) {
+      dispatch(requestFailed(error));
+    }
   };
 }

@@ -19,7 +19,7 @@ const INITIAL_STATE = {
   },
 };
 
-const aux = (action) => ({
+const aux1 = (action) => ({
   description: action.data.description,
   tag: action.data.tag,
   value: action.data.value,
@@ -78,7 +78,7 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       getState: false,
-      form: { ...aux(action) } };
+      form: { ...aux1(action) } };
   case INIT_EDIT_EXPENSE:
     return {
       ...state,

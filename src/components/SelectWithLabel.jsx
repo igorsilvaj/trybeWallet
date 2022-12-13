@@ -35,7 +35,7 @@ selectTextWithLabel.defaultProps = {
   datatestid: '',
   labelText: '',
   name: '',
-  onChange: () => '',
+  onChange: null,
   options: ['NotDefined', 'b'],
   placeholder: '',
   value: '',
