@@ -7,6 +7,7 @@ import mockData from './mocks/mockData';
 
 const loading = 'Carregando...';
 const totalField = 'total-field';
+const deleteBtn = 'delete-btn';
 
 const renderFromHomepage = () => {
   const { history } = renderWithRouterAndRedux(<App />);
@@ -189,7 +190,7 @@ describe('Testes com interação do usuario-3', () => {
 
     await addTestExpense();
 
-    const deleteExpense = screen.getByTestId('delete-btn');
+    const deleteExpense = screen.getByTestId(deleteBtn);
     expect(deleteExpense).toBeVisible();
     await act(async () => {
       userEvent.click(deleteExpense);
@@ -245,12 +246,12 @@ describe('Tratamento de erros', () => {
     updatedWallet = walletStore(store);
     expect(updatedWallet.expenses.length).toBe(2);
     expect(updatedWallet.expenses[1].id).toBe(1);
-    let deleteExpenseList = await waitFor(() => screen.findAllByTestId('delete-btn'));
+    let deleteExpenseList = await waitFor(() => screen.findAllByTestId(deleteBtn));
     const deleteExpense = deleteExpenseList[0];
     act(() => {
       userEvent.click(deleteExpense);
     });
-    deleteExpenseList = await waitFor(() => screen.findAllByTestId('delete-btn'));
+    deleteExpenseList = await waitFor(() => screen.findAllByTestId(deleteBtn));
     expect(deleteExpenseList.length).toBe(1);
     await addTestExpense();
     updatedWallet = walletStore(store);
