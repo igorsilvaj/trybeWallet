@@ -1,13 +1,20 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+<div>
+  <h1>TrybeWallet</h1>
+  <p>
+    <a href="https://igorsilvaj.github.io/trybeWallet">Demonstração</a>
+    ·
+    <a href="https://github.com/igorsilvaj/trybeWallet/issues">Reporte um Bug</a>
+  </p>
+</div>
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## Sobre o projeto
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Desenvolvido em grupo durante o curso de Front-end da Trybe.
+
+Projeto com foco na utilização da biblioteca Redux que proporciona gerenciamento de estado para a aplicação. Com a utilização do Redux o desenvolvimento se torna muito mais escalável evitando prop drilling, sendo fácil de debugar e centralizando o estado na Store onde toda a aplicação pode consumir.
+
+
+<br />
+
+
+<img src='./src/assets/imgs/desktop.png' width='700px'>
