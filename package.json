@@ -1,5 +1,6 @@
 {
-  "name": "sd-0x-project-trybewallet",
+  "name": "trybewallet",
+  "homepage": "https://igorsilvaj.github.io/trybeWallet/",
   "version": "1.0.0",
   "private": true,
   "engines": {
